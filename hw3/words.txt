@@ -1,0 +1,12 @@
+hello - привет
+apple - яблоко
+big - большой
+list - список
+orange - апельсин
+table - стол
+cup - крушка
+mouse - мышь
+phone - телефон
+pen - ручка
+brain - мозг
+paper - бумага
