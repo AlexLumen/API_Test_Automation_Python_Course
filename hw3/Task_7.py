@@ -28,23 +28,20 @@ class Phone:
 
 class Nokia(Phone):
     def __init__(self, color, price, count_buttons):
-        self.color = color
-        self.price = price
+        super().__init__(color, price, "Nokia")
         self.count_buttons = count_buttons
 
 
 class Samsung(Phone):
     def __init__(self, color, price, waterproofness):
+        super().__init__(color, price, "Samsung")
         self.waterproofness = waterproofness
-        self.color = color
-        self.price = price
 
 
 class Iphone(Phone):
     def __init__(self, color, price, speed_internet):
+        super().__init__(color, price, "Iphone")
         self.speed_internet = speed_internet
-        self.color = color
-        self.price = price
 
 
 list_Iphone = [Iphone(choice(colors), randint(15000, 110000), choice(speed_internet)) for i in range(120)]
