@@ -9,31 +9,25 @@ weight in range(30, 70)
 color = ['white', 'black', 'gray', 'ginger', 'brown']"""
 from random import *
 
+colors = ['white', 'black', 'gray', 'ginger', 'brown']
+
 
 class Wolf:
-    speed = 0
-    weight = 0
-    color = []
+    def __init__(self, speed, weight, color):
+        self.speed = speed
+        self.weight = weight
+        self.color = color
+
+    def __lt__(self, other):
+        return self.get_power() < other.get_power()
+
+    def __gt__(self, other):
+        return self.get_power() > other.get_power()
 
     def get_power(self):
         return self.speed ** 2 / self.weight
 
 
-wolfs = []
-for i in range(100):
-    wolf = Wolf()
-    wolf.speed = randint(20, 200)
-    wolf.weight = randint(30, 70)
-    wolf.color = choice(['white', 'black', 'gray', 'ginger', 'brown'])
-    power_wolf = wolf.get_power()
-    wolfs.append([wolf.speed, wolf.weight, wolf.color, power_wolf])
+wolfs = [Wolf(randint(30, 70), randint(20, 200), choice(colors)) for i in range(100)]
 
-powers = []
-powerfull_wolf = []
-for wolf in wolfs:
-    powers.append(wolf[3])
-    if max(powers) in wolf:
-        powerfull_wolf = wolf
-
-print(f'Самый сильный волк:Скорость - {powerfull_wolf[0]}, Вес - {powerfull_wolf[1]}, Цвет - {powerfull_wolf[2]},'
-      f'Сила - {powerfull_wolf[3]}')
+print(max(wolfs))
