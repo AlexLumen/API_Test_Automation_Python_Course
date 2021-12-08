@@ -13,7 +13,7 @@ from random import *
 
 
 def post_pet(id, category, name, photoUrls, tags, status):
-    api_method = "v2/pet/findByStatus"
+    api_method = "v2/pet"
     url = "https://petstore.swagger.io/" + api_method
 
     header = {"Accept": "application/json"}
